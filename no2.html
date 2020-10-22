@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Kasus no.2</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{message}}</h1>
+    <input v-model="message">
+    <br><br>
+    <button v-on:click= "reverseMessage">Reverse</button>
+    <button v-on:click="Undo/Redo">Undo/Redo</button>
+  </div>
+
+  <style>
+    body{
+      text-align: center;
+      padding-top: 200px;
+    }
+  </style>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      message: 'Indonesia',
+    },
+    methods:{
+      reverseMessage: function(){
+        this.message = this.message.split('').reverse().join('')
+      },
+
+    }
+  })
+</script>
+</html>
